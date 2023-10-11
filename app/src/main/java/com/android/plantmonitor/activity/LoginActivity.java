@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     Toast.LENGTH_LONG).show();
                                             Log.v("error", task.getException().getMessage());
                                         } else {
-                                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);//TODO: change to home
+                                            Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);//TODO: change to home
                                             startActivity(intent);
                                             finish();
                                         }
@@ -96,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 //

@@ -33,14 +33,17 @@ android {
 }
 
 dependencies {
-
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("com.squareup.retrofit2:retrofit:2.6.2")
+//    implementation("com.squareup.retrofit:converter-gson:2.0.0-beta2")
+    implementation("com.squareup.retrofit2:converter-scalars:2.5.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation("com.google.firebase:firebase-analytics")
 //    implementation("com.google.firebase:firebase-core:32.3.1")
-//    implementation("com.google.firebase:firebase-database:16.0.3")
+    implementation("com.google.firebase:firebase-database:16.0.5")
     implementation("com.google.firebase:firebase-auth:16.0.5")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
