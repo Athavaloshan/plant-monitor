@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activity.DashboardActivity">
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <Button
-        android:id="@+id/button_dashboard"
+        android:id="@+id/tmpButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:drawableStart="@drawable/temperature"
+        android:drawablePadding="4dp"
+        android:drawableTint="#ff0000"
+        android:text="Temperature" />
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Button" />
+        android:drawableStart="@drawable/rain"
+        android:drawablePadding="4dp"
+        android:drawableTint="#ff0000"
+        android:text="Rain" />
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:drawableStart="@drawable/humidity"
+    android:drawablePadding="4dp"
+    android:drawableTint="#ff0000"
+    android:text="Humidity" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ph"
+        android:drawablePadding="4dp"
+        android:drawableTint="#ff0000"
+        android:text="Ph" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/yield"
+        android:drawablePadding="4dp"
+        android:drawableTint="#ff0000"
+        android:text="Yield" />
+
 </LinearLayout>
-</ScrollView>
