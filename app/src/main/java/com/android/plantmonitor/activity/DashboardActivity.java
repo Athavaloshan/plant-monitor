@@ -13,72 +13,44 @@ import android.widget.Button;
 import java.io.IOException;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.android.plantmonitor.R;
 
-import retrofit2.converter.scalars.ScalarsConverterFactory;
-public class DashboardActivity extends AppCompatActivity {
-    private Button button;
-
-    private void getRequestRetrofit() throws IOException{
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        String url = "https://git.eclipse.org/r/";
-        url = "http://127.0.0.1";
-        url = "http://www.appdomain.com/users/";
-        Retrofit retrofit = new Retrofit.Builder()
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .baseUrl(url)
-                .build();
-        ApiService service = retrofit.create(ApiService.class);
-
-
-        retrofit2.Call<String> stringCall = service.getGreeting();
-        stringCall.enqueue(new retrofit2.Callback<String>() {
-            @Override
-            public void onResponse(retrofit2.Call<String> call, retrofit2.Response<String> response) {
-                Log.i("Response", response.body().toString());
-                //Toast.makeText()
-                if (response.isSuccessful()) {
-                    if (response.body() != null) {
-                        Log.e("onSuccess", response.body().toString());
-                    } else {
-                        Log.e("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(retrofit2.Call<String> call,Throwable t) {
-                Log.e("","Athavan Failure GET request :" + t.toString() );
-            }
-        });
-    }
+public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
+    private CardView tempCard, rainCard, humidityCard, phCard, yieldCard, co2Card;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        button = findViewById(R.id.tmpButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    getRequestRetrofit();
-                }
+        tempCard = (CardView) findViewById(R.id.temperatureCard);
+        rainCard = findViewById(R.id.rainCard);
+        humidityCard = findViewById(R.id.humidityCard);
+        phCard = findViewById(R.id.phCard);
+        yieldCard = findViewById(R.id.yieldCard);
+        co2Card = findViewById(R.id.co2Card);
 
-                catch(IOException e){
-                    e.printStackTrace();
-                }
-
-                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
+        tempCard.setOnClickListener(this);
     }
+        @Override
+        public void onClick(View v) {
+            Intent i;
+            int id = v.getId();
+//            switch (v.getId()){
+                if(id == R.id.temperatureCard) {
+                    i = new Intent(this, Temperature.class);
+                    startActivity(i);
+                }
+//                case R.id.rainCard : i = new Intent(this, Temperature.class); break;
+//                case R.id.humidityCard : i = new Intent(this, Temperature.class); break;
+//                case R.id.phCard : i = new Intent(this, Temperature.class); break;
+//                case R.id.yieldCard : i = new Intent(this, Temperature.class); break;
+//                case R.id.co2Card : i = new Intent(this, Temperature.class); break;
+//                default:break;
+
+//            }
+        }
 
 }
 

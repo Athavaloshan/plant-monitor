@@ -5,7 +5,6 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
-    android:background="@drawable/green_button_bg"
 tools:context=".activity.LoginActivity">
 
 <LinearLayout
@@ -21,31 +20,23 @@ tools:context=".activity.LoginActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-<!--        <ImageView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/circle"-->
-<!--            android:src="@mipmap/blood_bank_icon_round" />-->
         <LinearLayout
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-<!--            <ImageView-->
-<!--                android:layout_weight="1"-->
-<!--                android:src="@drawable/facebook_circle"-->
-<!--                android:layout_width="30dp"-->
-<!--                android:layout_height="30dp" />-->
-
-<!--            <ImageView-->
-<!--                android:layout_width="30dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:src="@drawable/twitter_512" />-->
         </LinearLayout>
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/image_logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/plant_monitor" />
     <EditText
         android:textColor="@android:color/white"
         android:id="@+id/input_username"
@@ -70,7 +61,6 @@ tools:context=".activity.LoginActivity">
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:background="@drawable/signin_btn"
-        android:textColor="@android:color/white"
         android:text="@string/action_sign_in_short" />
 
     <Button
@@ -80,8 +70,7 @@ tools:context=".activity.LoginActivity">
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:padding="2dp"
-        android:textColor="@android:color/white"
-        android:background="@drawable/transparent_black_ten_percent"
+        android:background="@drawable/signin_btn"
         android:text="@string/register" />
 
     <Button
@@ -89,9 +78,9 @@ tools:context=".activity.LoginActivity">
         android:id="@+id/button_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:padding="2dp"
-        android:textColor="@android:color/white"
-        android:background="@drawable/transparent_black_ten_percent"
+        android:background="@drawable/signin_btn"
         android:text="@string/forgotpass" />
 
 </LinearLayout>
