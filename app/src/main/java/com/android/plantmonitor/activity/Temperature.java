@@ -1,5 +1,7 @@
 package com.android.plantmonitor.activity;
 
+import com.android.plantmonitor.fragment.DatePickerFragment;
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -27,6 +29,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -46,7 +49,7 @@ import java.util.List;
 
 public class Temperature extends AppCompatActivity {
     private LineChart mChart;
-
+    private Button dashboard_btn, datePicker_start_btn, datePicker_end_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +57,34 @@ public class Temperature extends AppCompatActivity {
         mChart = findViewById(R.id.chart);
         mChart.setTouchEnabled(true);
         mChart.setPinchZoom(true);
-//        MyMarkerView mv = new MyMarkerView(getApplicationContext(), R.layout.custom_marker_view);
-//        mv.setChartView(mChart);
-//        mChart.setMarker(mv);
         renderData();
+
+        dashboard_btn = findViewById(R.id.dashboard_tmp_btn);
+        dashboard_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v){
+                Intent intent = new Intent(Temperature.this, DashboardActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        datePicker_start_btn = findViewById(R.id.datePicker_start);
+        datePicker_end_btn = findViewById(R.id.datePicker_end);
+
+        datePicker_start_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                DatePickerFragment newFragment = new DatePickerFragment();
+                newFragment.show(getSupportFragmentManager(), "datePicker");            }
+        });
+
+        datePicker_end_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                DatePickerFragment newFragment = new DatePickerFragment();
+                newFragment.show(getSupportFragmentManager(), "datePicker");            }
+        });
     }
 
     public void renderData() {

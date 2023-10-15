@@ -18,6 +18,7 @@ import com.android.plantmonitor.R;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
     private CardView tempCard, rainCard, humidityCard, phCard, yieldCard, co2Card;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +30,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         phCard = findViewById(R.id.phCard);
         yieldCard = findViewById(R.id.yieldCard);
         co2Card = findViewById(R.id.co2Card);
-
         tempCard.setOnClickListener(this);
     }
-        @Override
-        public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
             Intent i;
             int id = v.getId();
 //            switch (v.getId()){
