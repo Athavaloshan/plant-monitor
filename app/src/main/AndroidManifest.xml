@@ -16,6 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.Ph"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Co2"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Humidity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Yield"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Rain"
+            android:exported="false" />
+        <activity
             android:name=".activity.Temperature"
             android:label="@string/title_activity_temperature"
             android:theme="@style/AppTheme" />

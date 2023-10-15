@@ -1,8 +1,7 @@
 package com.android.plantmonitor.activity;
-import retrofit2.*;
+
 
 import android.os.StrictMode;
-import com.android.plantmonitor.data.ApiService;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,16 +41,25 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                     i = new Intent(this, Temperature.class);
                     startActivity(i);
                 }
-//                case R.id.rainCard : i = new Intent(this, Temperature.class); break;
-//                case R.id.humidityCard : i = new Intent(this, Temperature.class); break;
-//                case R.id.phCard : i = new Intent(this, Temperature.class); break;
-//                case R.id.yieldCard : i = new Intent(this, Temperature.class); break;
-//                case R.id.co2Card : i = new Intent(this, Temperature.class); break;
-//                default:break;
+                else if(id == R.id.rainCard) {
+                    i = new Intent(this, Rain.class);
+                }
+                else if(id == R.id.humidityCard) {
+                    i = new Intent(this, Humidity.class);
+                }
+                else if(id == R.id.phCard) {
+                    i = new Intent(this, Ph.class);
+                }
+                else if(id == R.id.yieldCard) {
+                    i = new Intent(this, Yield.class);
+                }
+                else if(id == R.id.co2Card) {
+                    i = new Intent(this, Co2.class);
+                }
+                else {
+                    i = new Intent(this, Temperature.class);
+                }
 
-//            }
         }
 
 }
-
-//<!--        android:networkSecurityConfig="@xml/network_security_config"-->
