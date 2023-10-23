@@ -41,10 +41,10 @@
             android:name=".activity.ProfileActivity"
             android:label="Registration" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".activity.DashboardActivity"
             android:label="Dashboard" />
         <activity
-            android:name=".activity.DashboardActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
