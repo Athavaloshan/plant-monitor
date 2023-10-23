@@ -83,9 +83,6 @@ public class Temperature extends AppCompatActivity {
         datePicker_start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
-//                DatePickerFragment datePickerStart = new DatePickerFragment();
-//                datePickerStart.show(getSupportFragmentManager(), "datePicker start");
-//                startYear = datePickerStart.mYear;
                 openDialog(true);
             }
         });
@@ -93,9 +90,6 @@ public class Temperature extends AppCompatActivity {
         datePicker_end_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
-//                DatePickerFragment datePickerEnd = new DatePickerFragment();
-//                datePickerEnd.show(getSupportFragmentManager(), "datePicker end");
-//                endYear = datePickerEnd.mYear;
                 openDialog(false);
             }
 

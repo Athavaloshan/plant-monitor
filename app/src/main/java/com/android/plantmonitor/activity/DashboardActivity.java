@@ -31,33 +31,43 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         yieldCard = findViewById(R.id.yieldCard);
         co2Card = findViewById(R.id.co2Card);
         tempCard.setOnClickListener(this);
+        rainCard.setOnClickListener(this);
+        humidityCard.setOnClickListener(this);
+        phCard.setOnClickListener(this);
+        yieldCard.setOnClickListener(this);
+        co2Card.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
             Intent i;
             int id = v.getId();
-//            switch (v.getId()){
                 if(id == R.id.temperatureCard) {
                     i = new Intent(this, Temperature.class);
                     startActivity(i);
                 }
                 else if(id == R.id.rainCard) {
                     i = new Intent(this, Rain.class);
+                    startActivity(i);
                 }
                 else if(id == R.id.humidityCard) {
                     i = new Intent(this, Humidity.class);
+                    startActivity(i);
                 }
                 else if(id == R.id.phCard) {
                     i = new Intent(this, Ph.class);
+                    startActivity(i);
                 }
                 else if(id == R.id.yieldCard) {
                     i = new Intent(this, Yield.class);
+                    startActivity(i);
                 }
                 else if(id == R.id.co2Card) {
                     i = new Intent(this, Co2.class);
+                    startActivity(i);
                 }
                 else {
                     i = new Intent(this, Temperature.class);
+                    startActivity(i);
                 }
 
         }

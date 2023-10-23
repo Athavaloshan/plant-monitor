@@ -16,7 +16,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.plantmonitor.R;
-import com.android.plantmonitor.viewmodel.UserData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -34,13 +33,8 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Button btnSignup;
     private ProgressDialog pd;
-    private Spinner gender, bloodgroup, division;
-
     private boolean isUpdate = false;
-
-    private DatabaseReference db_ref, donor_ref;
     private FirebaseDatabase db_User;
-    private CheckBox isDonor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +48,6 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         db_User = FirebaseDatabase.getInstance();
-        db_ref = db_User.getReference("users");
-        donor_ref = db_User.getReference("donors");
         mAuth = FirebaseAuth.getInstance();
 
         inputemail = findViewById(R.id.input_userEmail);
