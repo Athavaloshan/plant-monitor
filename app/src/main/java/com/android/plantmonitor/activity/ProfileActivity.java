@@ -56,63 +56,6 @@ public class ProfileActivity extends AppCompatActivity {
         btnSignup = findViewById(R.id.button_register);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-//        if (mAuth.getCurrentUser() != null) {
-//
-//            inputemail.setVisibility(View.GONE);
-//            inputpassword.setVisibility(View.GONE);
-//            retypePassword.setVisibility(View.GONE);
-//            btnSignup.setText("Update Profile");
-//            pd.dismiss();
-//           /// getActionBar().setTitle("Profile");
-//            getSupportActionBar().setTitle("Profile");
-//            findViewById(R.id.image_logo).setVisibility(View.GONE);
-//            isUpdate = true;
-//
-//            Query Profile = db_ref.child(mAuth.getCurrentUser().getUid());
-//            Profile.addListenerForSingleValueEvent(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//
-//                    UserData userData = dataSnapshot.getValue(UserData.class);
-//
-//                    if (userData != null) {
-//                        pd.show();
-//                        Query donor = donor_ref.child(division.getSelectedItem().toString())
-//                                .child(bloodgroup.getSelectedItem().toString())
-//                                .child(mAuth.getCurrentUser().getUid());
-//
-//                        donor.addListenerForSingleValueEvent(new ValueEventListener() {
-
-//                            @Override
-//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//                                if(dataSnapshot.exists())
-//                                {
-//                                    isDonor.setChecked(true);
-//                                    isDonor.setText("Unmark this to leave from donors");
-//                                }
-//                                else
-//                                {
-//                                    Toast.makeText(ProfileActivity.this, "Your are not a donor! Be a donor and save life by donating blood.",
-//                                            Toast.LENGTH_LONG).show();
-//                                }
-//                                pd.dismiss();
-//
-//                            }
-//                            @Override
-//                            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                                Log.d("User", databaseError.getMessage());
-//                            }
-//                        });
-//                    }
-//                }
-//                @Override
-//                public void onCancelled(@NonNull DatabaseError databaseError) {
-//                    Log.d("User", databaseError.getMessage());
-//                }
-//            });
-//        } else pd.dismiss();
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
