@@ -38,6 +38,7 @@ Crop management is a crucial aspect of farming that ensures crops getting enough
 
 * Android Studio
 * Java
+* FireBase
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
